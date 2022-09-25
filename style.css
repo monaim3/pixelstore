@@ -1,0 +1,7 @@
+.drawer {
+    width: 100%;
+    z-index: 8!important;
+    
+    display: grid;
+    overflow: hidden;
+}

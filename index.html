@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.27.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Navbar started here -->
+    <header>
+        <div class="navbar bg-slate-600">
+            <div class="flex-1">
+                <a class="btn btn-ghost normal-case text-xl">
+                    <img class="w-10 md:w-15" src="img/logo.png" alt=""></a>
+                <span class="text-xl md:text-5xl ml-2 font-bold text-white">PIXEL STORE</span>
+            </div>
+            <div class="flex-none gap-2">
+                <ul class="hidden md:flex">
+                    <li class="ml-10 text-2xl">
+                        <a href="./index.html"
+                            class="text-white cursor-pointer hover:text-blue-400 duration-200 font-bold"><i
+                                class="fa-solid fa-house mr-2 text-warning"></i>Home</a>
+                    </li>
+
+                    <li class="ml-10 text-2xl" onclick="navigateToWishListPage()">
+                        <a class="text-white cursor-pointer hover:text-blue-400 duration-200 font-bold"><i
+                                class="fa-solid fa-heart text-warning mr-2"></i>WishList</a>
+                    </li>
+
+                    <li class="ml-10">
+                        <a class="text-white cursor-pointer hover:text-blue-400 duration-200 font-bold text-2xl"
+                            href="./page/orders.html"><i class="fa-solid fa-list-check mr-2 text-warning"></i>Orders</a>
+                    </li>
+
+                    <li class="mx-10 relative">
+                        <label tabindex="0" for="my-drawer-4"
+                            class="drawer-button text-white cursor-pointer hover:text-blue-400 duration-200 font-bold "><i
+                                class="fa-solid fa-cart-shopping mr-2 text-warning text-2xl"></i>
+                        </label>
+                        <div class="badge badge-secondary absolute right-[-82%] top-[-45%]">
+                            <span id="badge-count">0</span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="dropdown dropdown-end">
+                    <label tabindex="0" class="btn btn-ghost btn-circle avatar md:hidden">
+                        <div class="w-10 rounded-full">
+                            <i onclick="handlehumber(true)" class="fa-solid fa-bars text-white font-bold"></i>
+                        </div>
+                    </label>
+                    <ul tabindex="0"
+                        class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+                        id="resCart">
+                        <li>
+                            <a href="./index.html"><i class="fa-solid fa-house"></i>Home</a>
+                        </li>
+                        <li> <a><i class="fa-solid fa-heart"></i> WishList</a></li>
+                        <li> <a href="./page/orders.html"><i class="fa-solid fa-list-check"></i> Orders</a></li>
+                        <li>
+                            <!-- drawer open button here -->
+                            <label for="my-drawer-4" class="drawer-button"><i class="fa-solid fa-cart-shopping"></i>
+                                Cart</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <!-- drawer start here -->
+    <div class="drawer drawer-end">
+        <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content">
+            <!-- Page content here -->
+            <h1 class="text-3xl font-bold text-center mt-2">NEW ON PIXEL STORE
+            </h1>
+            <!-- card start here -->
+            <div class="max-w-[1100px]  mx-10 md:mx-auto min-h-[300px] grid md:grid-cols-3 sm:grid-cols-2 gap-8"
+                id="homepage-content">
+                <!-- <div class="card card-compact w-96 bg-base-100 shadow-xl mt-6 p-4"> -->
+                <!-- <figure><img class='rounded-lg w-full h-[300px]' src="img/product-placeholder.png" alt="Shoes" />
+                    </figure>
+                    <div class="card-body">
+                        <div class="flex justify-between">
+                            <h2 class="card-title">Google Pixel 6 Pro
+                            </h2>
+                            <div class="icon">
+                                <span class="mr-4"><i class="fa-solid fa-heart text-slate-500"></i></span>
+                                <span><i class="fa-solid fa-square-minus text-red-700"></i></span>
+                            </div>
+                        </div>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <h2 class="text-2xl font-semibold">Price: $<span id="price">750</span></h2>
+                        <div class="card-actions justify-between">
+                            <label for="my-modal-3"
+                                class="btn btn-outline btn-primary w-[45%] mx-auto flex justify-center items-center">
+                                <i class="fa-solid fa-circle-info mr-2"></i> See Details
+                            </label>
+                            <label for="my-modal-3"
+                                class="btn btn-outline btn-secondary w-[45%] mx-auto flex justify-center items-center">
+                                <i class="fa-solid fa-bag-shopping mr-2"></i> Buy Now
+                            </label>
+                        </div>
+                    </div> -->
+                <!-- </div> -->
+            </div>
+
+        </div>
+        <div class="drawer-side">
+            <label for="my-drawer-4" class="drawer-overlay"></label>
+            <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+                <!-- Sidebar content here -->
+                <h2 class="text-2xl text-center font-semibold text-warning">Cart Items</h2>
+                <div class="cart-items mt-4" id="cart-items">
+                    <!-- <div class="flex justify-between items-center bg-slate-200 rounded-md p-2 mb-4"> -->
+                        <!-- <img class="w-[10%]" src="img/product-placeholder.png" alt="">
+                        <div class="flex justify-between items-center w-[80%]">
+                            <p>Google Pixel 5a 5G
+                            </p>
+                            <input class="border rounded-md border-green-400 w-10 p-2" type="text" name="" id=""
+                                value="1" readonly>
+                            <span onclick="handleRemove('${productId}')"><i
+                                    class="fa-sharp fa-solid fa-trash text-red-700 cursor-pointer text-xl"></i></span>
+
+                        </div> -->
+                    <!-- </div> -->
+
+                </div>
+                <!-- clear all -->
+                <button onclick="handleClear()"
+                    class="w-1/2 btn bg-red-600 border-0 hover:bg-red-700 btn-sm mx-auto block my-2">
+                    CLEAR CART
+                </button>
+
+                <!-- price calclute -->
+                <div class="prdouct-price-area bg-slate-500 rounded-md p-2 mt-4">
+                    <p class="flex justify-between items-center">
+                        <span class="text-warning font-semibold">PRODUCT COUNT :
+                        </span>
+                        <span class="font-semibold text-xl" id="pdCount">0</span>
+                    </p>
+                    <p class="flex justify-between items-center">
+                        <span class="text-warning font-semibold">PRICE :
+                        </span>
+                        <span class="font-semibold text-xl" id="pdPrice">0</span>
+                    </p>
+                    <p class="flex justify-between items-center">
+                        <span class="text-warning font-semibold">TAX:
+                        </span>
+                        <span class="font-semibold text-xl" id="pdTax">0</span>
+                    </p>
+                    <hr class="h-2">
+                    <p class="flex justify-between items-center">
+                        <span class="text-warning font-semibold">TOTAL PRICE:
+                        </span>
+                        <span class="font-semibold text-xl" id="pdTotal">0</span>
+                    </p>
+                </div>
+                <!-- Confirm Order -->
+                <button onclick="handleConfirm()"
+                    class="w-1/2 btn bg-red-600 border-0 hover:bg-red-700 btn-sm mx-auto block my-2">
+                    Confirm Order
+                </button>
+            </ul>
+
+        </div>
+    </div>
+
+
+    
+    <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+    <div class="modal">
+        <div class="modal-box relative">
+            <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <div id="modal-info">
+
+            </div>
+        </div>
+    </div>
+     <!-- hero section -->
+
+     <div class="hero  bg-base-200 mt-4">
+        <div class="hero-content flex-col lg:flex-row ml-24 p-2">
+          <img src="img/ecommerce-gcff4b10b3_1280.jpg" class="max-w-sm rounded-lg shadow-2xl" />
+          <div>
+            <h1 class="text-4xl font-bold">Box Office News!</h1>
+            <p class="py-4">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+            <button class="btn btn-primary">Get Started</button>
+          </div>
+        </div>
+      </div>
+
+
+     <!-- footer area -->
+     <footer class="footer p-10 bg-slate-500 text-base-content text-white">
+        <div>
+          <img src="img/logo.png" class="w-[50px] h-[50px]" alt="">
+          <p>Pixel Industries Ltd.<br>Providing reliable tech since 1992</p>
+        </div> 
+        <div>
+          <span class="footer-title">Services</span> 
+          <a class="link link-hover">Branding</a> 
+          <a class="link link-hover">Design</a> 
+          <a class="link link-hover">Marketing</a> 
+          <a class="link link-hover">Advertisement</a>
+        </div> 
+        <div>
+          <span class="footer-title">Company</span> 
+          <a class="link link-hover">About us</a> 
+          <a class="link link-hover">Contact</a> 
+          <a class="link link-hover">Jobs</a> 
+          <a class="link link-hover">Press kit</a>
+        </div> 
+        <div>
+          <span class="footer-title">Legal</span> 
+          <a class="link link-hover">Terms of use</a> 
+          <a class="link link-hover">Privacy policy</a> 
+          <a class="link link-hover">Cookie policy</a>
+        </div>
+      </footer>
+    <script src="js/storage.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/common.js"></script>
+</body>
+
+</html>
